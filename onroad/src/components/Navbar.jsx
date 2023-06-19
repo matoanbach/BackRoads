@@ -1,5 +1,5 @@
 import logo from "../images/logo.svg";
-import pageLinks from "../data";
+import {pageLinks, socialLinks} from "../data";
 
 function Navbar() {
   return (
@@ -15,7 +15,7 @@ function Navbar() {
           {pageLinks.map((page) => {
             return (
               <li>
-                <a href={page.href} class="nav-link">
+                <a href={page.href} rel="noreferrer" class="nav-link">
                   {" "}
                   {page.text}{" "}
                 </a>
@@ -25,21 +25,17 @@ function Navbar() {
         </ul>
 
         <ul class="nav-icons">
-          <li>
-            <a href="https://www.twitter.com" target="_blank" class="nav-icon">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" class="nav-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" class="nav-icon">
-              <i class="fab fa-squarespace"></i>
-            </a>
-          </li>
+          {
+            socialLinks.map((link) => {
+              return (
+                <li key={link.id}>
+                <a href={link.href} target="_blank" class="nav-icon">
+                  <i class={link.icon}></i>
+                </a>
+              </li>
+              );
+            })
+          }
         </ul>
       </div>
     </nav>

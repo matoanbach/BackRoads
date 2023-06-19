@@ -1,41 +1,27 @@
+import logo from "../images/logo.svg";
+import pageLinks from "../data";
+
 function Navbar() {
   return (
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
-          <img src="./images/logo.svg" class="nav-logo" alt="backroads" />
+          <img src={logo} class="nav-logo" alt="backroads" />
           <button type="button" class="nav-toggle" id="nav-toggle">
             <i class="fas fa-bars"></i>
           </button>
         </div>
         <ul class="nav-links" id="nav-links">
-          <li>
-            <a href="#home" class="nav-link">
-              {" "}
-              home{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#about" class="nav-link">
-              {" "}
-              about{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#services" class="nav-link">
-              {" "}
-              services{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#tours" class="nav-link">
-              {" "}
-              tours
-            </a>
-          </li>
+          {pageLinks.map((page) => {
+            return (
+              <li>
+                <a href={page.href} class="nav-link">
+                  {" "}
+                  {page.text}{" "}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <ul class="nav-icons">

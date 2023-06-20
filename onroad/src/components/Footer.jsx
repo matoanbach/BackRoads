@@ -6,7 +6,7 @@ function Footer() {
     <footer class="section footer">
       <ul class="footer-links">
         {pageLinks.map((page) => {
-          return <PageLink {...page} />;
+          return <PageLink {...page} className="footer-link"/>;
         })}
       </ul>
       <ul class="footer-icons">

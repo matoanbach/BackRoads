@@ -1,7 +1,7 @@
 const SocialLink = (props) => {
   return (
     <li key={props.id}>
-      <a href={props.href} target="_blank" class="nav-icon">
+      <a href={props.href} target="_blank" rel="noreferrer" class="nav-icon">
         <i class={props.icon}></i>
       </a>
     </li>
